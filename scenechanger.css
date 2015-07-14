@@ -1,0 +1,278 @@
+:root{
+  --spacing: 10px;
+  --icon-size: 38px;
+  --icon-size-tablet: 30px;
+  --icon-size-mobile: 24px;
+};
+
+
+/*
+Straight copy from my original scenechanger.css
+*/
+
+/* Overall scenechanger wrapper */
+.mnv-ec-scenechanger-wrapper {
+  height: 20px;
+  width: 500px;
+  padding:0;
+  margin: 0;
+  background-color: #fafafa;
+}
+
+/* Wrapper for all dots (excludes left/right arrows) */
+.mnv-ec-scenechanger-alldots-wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: none;
+}
+
+/* Wrapper for one dot */
+.mnv-ec-scenechanger-onedot-wrapper {
+  display: inline-block;
+  width: 30px;
+  height: 100%;
+  padding:0 10px 0 10px;
+  margin:0;
+  background-color: none;
+}
+
+/* Actual dot */
+.mnv-ec-scenechanger-dot {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 0.1px;
+  height: 0.1px;
+  margin: auto;
+  border-radius: 10px;
+  background-color: #dadada;
+  border: solid 10px #dadada;
+}
+.mnv-ec-scenechanger-dot:after {
+  content:"";
+}
+.mnv-ec-scenechanger-dot:hover {
+  border-color: red;
+}
+
+
+/*
+.scenechange-circle {
+  width: 0px;
+  height: 0px;
+  border-radius: 10px;
+  background-color: #dadada;
+  border: solid 5px #dadada;
+}
+.scenechange-circle:hover {
+  border-color: #E3120B;
+}
+.scenechange-circle-selected {
+  border-color: #E3120B;
+}
+*/
+
+
+
+
+/* Three mid-level wrappers. One for each arrow (l/r)
+   and one for ALL circles: */
+.scenechange-arrow-wrapper-left, .scenechange-arrow-wrapper-right,
+  .scenechange-circles-wrapper {
+  height: 100%;
+  background-color: none;
+}
+.scenechange-arrow-wrapper-left {
+  width: 30px;
+  margin-right: 10px;
+  float: left;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  display: -webkit-flex;
+  -webkit-justify-content:center;
+  -webkit-align-items:center;
+}
+.scenechange-arrow-wrapper-right {
+  width: 30px;
+  margin-left: 10px;
+  float: right;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  display: -webkit-flex;
+  -webkit-justify-content:center;
+  -webkit-align-items:center;
+}
+.scenechange-circles-wrapper {
+  overflow: hidden;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:space-between;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -webkit-justify-content:space-between;
+}
+
+/* Hide wrapper containing all circles: */
+.scenechange-circles-hidden {
+  opacity:0;
+}
+
+/* Each arrow wrapper, defined above, has an actual inner arrow: */
+.scenechange-arrow-right, .scenechange-arrow-left {
+   display: inline-block;
+   width: 25px;
+   height: 25px;
+   border: 2px solid #dadada;
+   position: relative;
+   border-radius: 25px;
+}
+.scenechange-arrow-right:after, .scenechange-arrow-left:after {
+  content:"";
+  display: inline-block;
+  position: absolute;
+  left: 5px;
+  top: 6px;
+ -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  width: 10px;
+  height: 10px;
+  border-radius: 0;
+  background-color: none;
+  border: solid 2px #dadada;
+  border-left: none;
+  border-bottom: none;
+}
+.scenechange-arrow-left:after {
+  border: solid 2px #dadada;
+  border-right: none;
+  border-top: none;
+  left: 8px;
+}
+.scenechange-arrow:active {
+  border-color: #E3120B;
+  }
+.scenechange-arrow:active:after {
+  border-color: #E3120B;
+}
+.scenechange-arrow-hidden {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* Circles */
+/* scenechange-item is the sub-wrapper for individual circles */
+.scenechange-item{
+  position:relative;
+  height: 100%;
+  width:30px;
+  background-color: none;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  display: -webkit-flex;
+  -webkit-justify-content:center;
+  -webkit-align-items:center;
+}
+/* Then each scenechange-item contains the circle 'image' */
+.scenechange-circle {
+  width: 0px;
+  height: 0px;
+  border-radius: 10px;
+  background-color: #dadada;
+  border: solid 5px #dadada;
+}
+.scenechange-circle:hover {
+  border-color: #E3120B;
+}
+.scenechange-circle-selected {
+  border-color: #E3120B;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+Stuff inherited from the ShareBar
+Substituted 'scenechanger' for 'sharebar'
+*/
+
+.mnv-ec-scenechanger svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.mnv-ec-scenechanger .default-state,
+.mnv-ec-scenechanger .mnv-ec-scenechanger-icons {
+  height: inherit;
+}
+
+@media all and (max-width: 800px){
+  .mnv-ec-scenechanger a {
+    margin:0 10px 0 0;
+  }
+  .mnv-ec-scenechanger svg {
+    width: var(--icon-size-tablet);
+    height: var(--icon-size-tablet);
+  }
+}
+@media all and (max-width: 568px){
+  .mnv-ec-scenechanger a {
+    margin:0 10px 0 0;
+    border-radius: calc(var(--icon-size-mobile)/2);
+  }
+  .mnv-ec-scenechanger svg {
+    width: var(--icon-size-mobile);
+    height: var(--icon-size-mobile);
+  }
+}
+.mnv-ec-scenechanger.horizontal a {
+  display: inline-block;
+  margin-right: var(--spacing);
+}
+.mnv-ec-scenechanger a svg {
+  background: #929ca2 !important;
+}
+.mnv-ec-scenechanger.vertical a {
+  display: block;
+  margin-bottom: var(--spacing);
+}
+.mnv-ec-scenechanger a.fb:hover svg {
+  background: #3b5998 !important;
+}
+.mnv-ec-scenechanger a.twitter:hover svg {
+  background: #00aced !important;
+}
+.mnv-ec-scenechanger a.linkedin:hover svg {
+  background: #007bb6 !important;
+}
+.mnv-ec-scenechanger a.gplus:hover svg {
+  background: #dd4b39 !important;
+}
+.mnv-ec-scenechanger a.whatsapp:hover svg {
+  background: #39b54a !important;
+}
+.mnv-ec-scenechanger a.mail:hover svg {
+  background: #666666 !important;
+}
+.mnv-ec-scenechanger a.fb:hover svg {
+  background: #3b5998 !important;
+}
+.mnv-ec-scenechanger.no-mobile a.whatsapp {
+  display: none !important;
+}

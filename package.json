@@ -1,16 +1,16 @@
 {
   "name": "@economist/component-scenechanger",
   "version": "1.0.0",
-  "description": "A basic share bar",
+  "description": "A basic scene changer: arrows and dots",
   "author": "The Economist (http://economist.com)",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/the-economist-editorial/sharebar.git"
+    "url": "git+ssh://git@github.com/the-economist-editorial/component-scenechanger.git"
   },
-  "homepage": "https://github.com/the-economist-editorial/sharebar#readme",
+  "homepage": "https://github.com/the-economist-editorial/component-scenechanger#readme",
   "bugs": {
-    "url": "https://github.com/the-economist-editorial/sharebar/issues"
+    "url": "https://github.com/the-economist-editorial/component-scenechanger/issues"
   },
   "main": "index.js",
   "browserify": {
