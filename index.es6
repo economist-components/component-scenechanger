@@ -5,8 +5,9 @@ export default class SceneChanger extends React.Component {
 
   static get propTypes() {
     return {
-      sceneTotal: React.PropTypes.number,     // Number of 'scenes'
-      dotThreshold: React.PropTypes.number,   // Dots would disappear below this val (inactive)
+      sceneTotal: React.PropTypes.number,         // Number of 'scenes'
+      defaultSceneIndex: React.PropTypes.number,  // Default scene
+      dotThreshold: React.PropTypes.number,       // Dots would disappear below this val (inactive)
       icon: React.PropTypes.object,
       icons: React.PropTypes.array,
       onChangeIndex: React.PropTypes.function
@@ -16,7 +17,7 @@ export default class SceneChanger extends React.Component {
   static get defaultProps() {
     return {
       sceneTotal: 5,
-      // sceneIndex: 0,
+      defaultSceneIndex: 0,
       dotThreshold: 300,
       icon: {
         color: '#DADADA',
@@ -46,9 +47,10 @@ export default class SceneChanger extends React.Component {
   }
 
   // Set default state:
-  constructor() {
-    super();
-    this.state = { sceneIndex: 0 };
+  constructor(props) {
+    console.log(props);
+    super(props);
+    this.state = { sceneIndex: props.defaultSceneIndex };
   }
 
 
@@ -87,6 +89,7 @@ export default class SceneChanger extends React.Component {
     var sceneIndex, sceneTotal, arrowLeft, arrowRight, dots, i, leftClass, rightClass, dotClass;
     sceneIndex = this.state.sceneIndex;
     sceneTotal = this.props.sceneTotal;
+    console.log("hjkjjjjjjjjjjjjjjjjjjjj")
     // Left and right arrows
     // Class strings to hide at start/finish
     leftClass = "mnv-ec-scenechanger-arrow-wrapper-left";
