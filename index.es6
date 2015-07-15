@@ -48,7 +48,6 @@ export default class SceneChanger extends React.Component {
 
   // Set default state:
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = { sceneIndex: props.defaultSceneIndex };
   }
@@ -89,7 +88,6 @@ export default class SceneChanger extends React.Component {
     var sceneIndex, sceneTotal, arrowLeft, arrowRight, dots, i, leftClass, rightClass, dotClass;
     sceneIndex = this.state.sceneIndex;
     sceneTotal = this.props.sceneTotal;
-    console.log("hjkjjjjjjjjjjjjjjjjjjjj")
     // Left and right arrows
     // Class strings to hide at start/finish
     leftClass = "mnv-ec-scenechanger-arrow-wrapper-left";
