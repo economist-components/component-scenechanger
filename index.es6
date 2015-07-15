@@ -76,7 +76,7 @@ export default class SceneChanger extends React.Component {
   //
   changeIndex(newIndex) {
     if (this.props.onChangeIndex) {
-      this.props.onChangeIndex(newIndex, this.state.index);
+      this.props.onChangeIndex(newIndex, this.state.sceneIndex);
     }
     this.setState({ sceneIndex: newIndex });
   }
