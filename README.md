@@ -1,3 +1,3 @@
 # component-sharebar
 
-React component that creates a sharebar for the main socials website
+React component creates a scenechanger (arrow and dots)

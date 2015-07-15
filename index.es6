@@ -5,12 +5,11 @@ export default class SceneChanger extends React.Component {
 
   static get propTypes() {
     return {
-      sceneTotal: React.PropTypes.number,
-      // sceneIndex: React.PropTypes.number,
-      dotThreshold: React.PropTypes.number,
+      sceneTotal: React.PropTypes.number,     // Number of 'scenes'
+      dotThreshold: React.PropTypes.number,   // Dots would disappear below this val (inactive)
       icon: React.PropTypes.object,
       icons: React.PropTypes.array,
-      test: React.PropTypes.string,
+      onChangeIndex: React.PropTypes.function
     };
   }
 
@@ -44,59 +43,79 @@ export default class SceneChanger extends React.Component {
   }
 
   componentWillMount() {
-   
   }
 
+  // Set default state:
   constructor() {
     super();
     this.state = { sceneIndex: 0 };
   }
 
+
+  // EVENT LISTENERS
+  // Arrows:
   arrowClick(arrow, event) {
-    var i;
-    i = this.state.sceneIndex;
-    console.log("State is " + i);
+    var index = this.state.sceneIndex;
     if (arrow === "left") {
-      if (i > 0) {
-        i --;
+      if (index > 0) {
+        index --;
       }
     }
     else {
-      if ( i < (this.props.sceneTotal - 1) ) {
-        i ++;
+      if ( index < (this.props.sceneTotal - 1) ) {
+        index ++;
       }
     }
-    this.setState({ sceneIndex: i });
-    this.updateScenechanger(index);
+    this.changeIndex(index);    
   }
-
+  // Dots:
   dotClick(index, event) {
-    this.setState({ sceneIndex: index });
-    this.updateScenechanger(index);
+    this.changeIndex(index);
   }
+  //
+  changeIndex(newIndex) {
+    if (this.props.onChangeIndex) {
+      this.props.onChangeIndex(newIndex, this.state.index);
+    }
+    this.setState({ sceneIndex: newIndex });
+  }
+  // EVENT LISTENERS END
 
-  updateScenechanger(i) {
-    alert("Set appearance to " + i);
-  };
 
+  // RENDER
   render() {
-    var sceneTotal, arrowLeft, arrowRight, dots, i;
+    var sceneIndex, sceneTotal, arrowLeft, arrowRight, dots, i, leftClass, rightClass, dotClass;
+    sceneIndex = this.state.sceneIndex;
     sceneTotal = this.props.sceneTotal;
     // Left and right arrows
+    // Class strings to hide at start/finish
+    leftClass = "mnv-ec-scenechanger-arrow-wrapper-left";
+    rightClass = "mnv-ec-scenechanger-arrow-wrapper-right";
+    if (sceneIndex === 0) {
+      leftClass += " arrow-hidden";
+    }
+    else if (sceneIndex === (sceneTotal - 1 )) {
+      rightClass += " arrow-hidden";
+    }
     arrowLeft = 
-      <div className="mnv-ec-scenechanger-arrow-wrapper-left" key="left" onClick = {this.arrowClick.bind(this,"left")}>
+      <div className={leftClass} key="left" onClick = {this.arrowClick.bind(this,"left")}>
         <Icon icon="left" background={this.props.icon.background} color={this.props.icon.color}/>
       </div>;
     arrowRight = 
-      <div className="mnv-ec-scenechanger-arrow-wrapper-right" key="right" onClick = {this.arrowClick.bind(this,"right")}>
+      <div className={rightClass} key="right" onClick = {this.arrowClick.bind(this,"right")}>
         <Icon icon="right" background={this.props.icon.background} color={this.props.icon.color}/>
       </div>;
     // Dots
     dots = [];
     for (i = 0; i < sceneTotal; i ++) {
+      // Class to highlight current index
+      dotClass = "mnv-ec-scenechanger-dot";
+      if (i === sceneIndex) { 
+        dotClass += " dot-highlight"
+      };
       dots.push(
         <div className="mnv-ec-scenechanger-onedot-wrapper" key={i} onClick={this.dotClick.bind(this,i)}>
-          <div className="mnv-ec-scenechanger-dot">
+          <div className={dotClass}>
           </div>
         </div>
       )
@@ -113,7 +132,5 @@ export default class SceneChanger extends React.Component {
     );
 
   }
+  // RENDER ends
 }
-
-//        <Icon type="left"  onClick = {this.handleClick.bind(this)}/>
-//        <Icon type="right"  onClick = {this.handleClick.bind(this)} />

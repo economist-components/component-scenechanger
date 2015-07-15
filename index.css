@@ -44,6 +44,9 @@
 .mnv-ec-scenechanger-arrow-wrapper-right:hover { 
   background: red;
 }
+.arrow-hidden {
+  opacity:0;
+}
 
 /* Dots */
 .mnv-ec-scenechanger-alldots-wrapper {
@@ -87,4 +90,7 @@
 }
 .mnv-ec-scenechanger-dot:after {
   content:"";
+}
+.dot-highlight {
+  border-color: red;
 }
