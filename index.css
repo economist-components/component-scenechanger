@@ -9,12 +9,12 @@
 
 
 /* Overall scenechanger wrapper */
-.mnv-ec-scenechanger-wrapper {
+.mnv-ec-scenechanger-own-wrapper {
   height: 30px;
   width: 50%;
   padding: 0;
   margin: 0;
-  background-color: #efefef;
+  background-color: none;
 }
 
 /* Arrows */

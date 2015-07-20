@@ -10,7 +10,7 @@ export default class SceneChanger extends React.Component {
       dotThreshold: React.PropTypes.number,       // Dots would disappear below this val (inactive)
       icon: React.PropTypes.object,
       icons: React.PropTypes.array,
-      onChangeIndex: React.PropTypes.function
+      onChangeIndex: React.PropTypes.func
     };
   }
 
@@ -123,7 +123,7 @@ export default class SceneChanger extends React.Component {
     }
     // Glue it all together
     return (
-      <div className="mnv-ec-scenechanger-wrapper">
+      <div className="mnv-ec-scenechanger-own-wrapper">
         {arrowLeft}
         {arrowRight}
         <div className="mnv-ec-scenechanger-alldots-wrapper">
