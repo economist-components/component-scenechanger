@@ -73,7 +73,7 @@
     "build": "npm-assets ."
   },
   "dependencies": {
-    "@economist/component-icon": "^2.1.0",
+    "@economist/component-icon": "^3.0.2",
     "react": "^0.13.3"
   },
   "devDependencies": {
