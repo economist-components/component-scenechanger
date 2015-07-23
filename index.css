@@ -30,13 +30,15 @@
   width: 30px;
   margin: 0 0 0 20px;
 }
-.mnv-ec-scenechanger-arrow-wrapper-left svg { 
-  width: 30px;
-  height: 30px;
+.mnv-ec-scenechanger-arrow-wrapper-left svg {
+  /*width: 30px;*/
+  /*height: 30px;*/
+  margin -15px 0 0 -15px;
 }
 .mnv-ec-scenechanger-arrow-wrapper-right svg { 
-  width: 30px;
-  height: 30px;
+  /*width: 30px;*/
+  /*height: 30px;*/
+  margin -15px 0 0 -15px;
 }
 .mnv-ec-scenechanger-arrow-wrapper-left:hover { 
   background: red;
