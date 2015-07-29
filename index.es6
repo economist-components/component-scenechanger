@@ -86,12 +86,12 @@ export default class SceneChanger extends React.Component {
     const sceneTotal = this.props.sceneTotal;
     // Left and right arrows
     // Class strings to hide at start/finish
-    let leftClass = 'mnv-ec-scenechanger-arrow-wrapper-left';
-    let rightClass = 'mnv-ec-scenechanger-arrow-wrapper-right';
+    let leftClass = 'SceneChanger-arrow-left';
+    let rightClass = 'SceneChanger-arrow-right';
     if (sceneIndex === 0) {
-      leftClass += ' arrow-hidden';
+      leftClass += ' SceneChanger-arrow-hidden';
     } else if (sceneIndex === (sceneTotal - 1)) {
-      rightClass += ' arrow-hidden';
+      rightClass += ' SceneChanger-arrow-hidden';
     }
     const arrowLeft = (
       <div className={leftClass} key="left" onClick = {this.arrowClick.bind(this, 'left')}>
@@ -106,12 +106,12 @@ export default class SceneChanger extends React.Component {
     const dots = [];
     for (let i = 0; i < sceneTotal; i++) {
       // Class to highlight current index
-      let dotClass = 'mnv-ec-scenechanger-dot';
+      let dotClass = 'SceneChanger-dot';
       if (i === sceneIndex) {
-        dotClass += ' dot-highlight';
+        dotClass += ' SceneChanger-dot-highlight';
       }
       dots.push(
-        <div className="mnv-ec-scenechanger-onedot-wrapper" key={i} onClick={this.dotClick.bind(this, i)}>
+        <div className="SceneChanger-onedot-wrapper" key={i} onClick={this.dotClick.bind(this, i)}>
           <div className={dotClass}>
           </div>
         </div>
@@ -119,10 +119,10 @@ export default class SceneChanger extends React.Component {
     }
     // Glue it all together
     return (
-      <div className="mnv-ec-scenechanger-own-wrapper">
+      <div className="SceneChanger">
         {arrowLeft}
         {arrowRight}
-        <div className="mnv-ec-scenechanger-alldots-wrapper">
+        <div className="SceneChanger-alldots">
           {dots}
         </div>
       </div>

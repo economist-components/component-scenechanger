@@ -1,15 +1,5 @@
-@import './palette.css';
-
-:root{
-  --spacing: 10px;
-  --icon-size: 38px;
-  --icon-size-tablet: 30px;
-  --icon-size-mobile: 24px;
-}
-
-
 /* Overall scenechanger wrapper */
-.mnv-ec-scenechanger-own-wrapper {
+.SceneChanger {
   height: 100%;
   width: 100%;
   padding: 0;
@@ -18,40 +8,32 @@
 }
 
 /* Arrows */
-.mnv-ec-scenechanger-arrow-wrapper-left {
+.SceneChanger-arrow-left,
+.SceneChanger-arrow-right {
   float: left;
   height: 100%;
   width: 30px;
   margin: 0 20px 0 0;
+  cursor: pointer;
 }
-.mnv-ec-scenechanger-arrow-wrapper-right {
+.SceneChanger-arrow-right {
   float: right;
-  height: 100%;
-  width: 30px;
   margin: 0 0 0 20px;
 }
-.mnv-ec-scenechanger-arrow-wrapper-left svg {
-  /*width: 30px;*/
-  /*height: 30px;*/
+.SceneChanger-arrow-left svg,
+.SceneChanger-arrow-right svg {
   margin: -15px 0 0 -15px;
 }
-.mnv-ec-scenechanger-arrow-wrapper-right svg {
-  /*width: 30px;*/
-  /*height: 30px;*/
-  margin: -15px 0 0 -15px;
+.SceneChanger-arrow-left:hover,
+.SceneChanger-arrow-right:hover {
+  background: #e3120b;
 }
-.mnv-ec-scenechanger-arrow-wrapper-left:hover {
-  background: red;
-}
-.mnv-ec-scenechanger-arrow-wrapper-right:hover {
-  background: red;
-}
-.arrow-hidden {
+.SceneChanger-arrow-hidden {
   opacity:0;
 }
 
 /* Dots */
-.mnv-ec-scenechanger-alldots-wrapper {
+.SceneChanger-alldots {
   overflow:hidden;
   height: 100%;
   margin: 0;
@@ -66,27 +48,19 @@
   -webkit-justify-content:space-between;
 }
 /* Wrapper for one dot */
-.mnv-ec-scenechanger-onedot-wrapper {
+.SceneChanger-onedot-wrapper {
   position:relative;
   width: 30px;
   height: 30px;
   padding:0;
   margin:0;
   background-color: none;
-  /*
-  display: flex;
-  justify-content:center;
-  align-items:center;
-  display: -webkit-flex;
-  -webkit-justify-content:center;
-  -webkit-align-items:center;
-  */
 }
-.mnv-ec-scenechanger-onedot-wrapper:hover {
-  background-color: red;
+.SceneChanger-onedot-wrapper:hover {
+  background-color: #e3120b;
 }
 /* Actual dot */
-.mnv-ec-scenechanger-dot {
+.SceneChanger-dot {
   width: 0.1px;
   height: 0.1px;
   border: solid 10px #dadada;
@@ -97,9 +71,6 @@
   left: 50%;
   margin: -10.05px 0 0 -10.05px;
 }
-/*.mnv-ec-scenechanger-dot:after {
-  content:"";
-}*/
-.dot-highlight {
-  border-color: red;
+.SceneChanger-dot-highlight {
+  border-color: #e3120b;
 }
