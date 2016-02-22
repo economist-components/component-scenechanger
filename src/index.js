@@ -1,8 +1,6 @@
 import Icon from '@economist/component-icon';
 import React from 'react';
 
-const zero = 0;
-const one = 1;
 export default class SceneChanger extends React.Component {
   constructor(props) {
     super(props);
@@ -18,13 +16,15 @@ export default class SceneChanger extends React.Component {
     const { action } = event.currentTarget.dataset;
     const { sceneTotal, onChangeIndex } = this.props;
     const { sceneIndex } = this.state;
+    const firstIndex = 0;
+    const lastIndex = sceneTotal - 1;
     let newIndex = sceneIndex;
     if (isNaN(action)) {
       if (action === 'left') {
-        if (sceneIndex > zero) {
+        if (sceneIndex > firstIndex) {
           newIndex--;
         }
-      } else if (sceneIndex < (sceneTotal - one)) {
+      } else if (sceneIndex < lastIndex) {
         newIndex++;
       }
     } else {
@@ -75,8 +75,10 @@ export default class SceneChanger extends React.Component {
   render() {
     const { sceneTotal } = this.props;
     const { sceneIndex } = this.state;
-    const rightArrowModifier = (sceneIndex === zero) ? 'inactive' : 'active';
-    const leftArrowModifier = (sceneIndex === (sceneTotal - one)) ? 'inactive' : 'active';
+    const firstIndex = 0;
+    const lastIndex = sceneTotal - 1;
+    const rightArrowModifier = (sceneIndex === firstIndex) ? 'inactive' : 'active';
+    const leftArrowModifier = (sceneIndex === lastIndex) ? 'inactive' : 'active';
     const leftArrow = this.generateNextButton('left', rightArrowModifier);
     const rightArrow = this.generateNextButton('right', leftArrowModifier);
     const dots = [];
