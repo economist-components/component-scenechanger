@@ -15,6 +15,7 @@
   outline: none;
   background: transparent;
   border: 0 none;
+  -webkit-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
 }
 
@@ -47,13 +48,25 @@
 
 .scene-changer__dots {
   overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   height: 100%;
   margin: 0;
   padding: 0;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .scene-changer__dot {
@@ -72,7 +85,7 @@
   background-color: #e3120b;
 }
 
-.scene-changer__dot::after {
+.scene-changer__dot:after {
   content: '.';
   position: absolute;
   top: 50%;
@@ -85,10 +98,10 @@
   border-radius: 10px;
 }
 
-.scene-changer__dot--active::after {
+.scene-changer__dot--active:after {
   border-color: #e3120b;
 }
 
-.scene-changer__dot--active:hover::after {
+.scene-changer__dot--active:hover:after {
   border-color: #dadada;
 }
