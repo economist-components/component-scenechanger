@@ -121,9 +121,9 @@
   },
   "devDependencies": {
     "@economist/doc-pack": "^1.0.6",
-    "@economist/provision-react-component": "1.4.1",
-    "babel": "^5.8.34",
-    "babelify": "^6.4.0",
+    "@economist/provision-react-component": "1.4.3",
+    "babel": "^6.5.2",
+    "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "chai": "^3.5.0",
     "chai-spies": "^0.7.1",
