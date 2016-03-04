@@ -85,7 +85,7 @@
   background-color: #e3120b;
 }
 
-.scene-changer__dot:after {
+.scene-changer__dot::after {
   content: '.';
   position: absolute;
   top: 50%;
@@ -98,10 +98,10 @@
   border-radius: 10px;
 }
 
-.scene-changer__dot--active:after {
+.scene-changer__dot--active::after {
   border-color: #e3120b;
 }
 
-.scene-changer__dot--active:hover:after {
+.scene-changer__dot--active:hover::after {
   border-color: #dadada;
 }
