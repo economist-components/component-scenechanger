@@ -1,8 +1,7 @@
-
+import 'babel-polyfill';
+import React from 'react';
 import SceneChanger from '..';
 import chai from 'chai';
-import React from 'react/addons';
-const TestUtils = React.addons.TestUtils;
 chai.should();
 describe('SceneChanger', () => {
   it('is compatible with React.Component', () => {
@@ -11,6 +10,6 @@ describe('SceneChanger', () => {
   });
 
   it('renders a React element', () => {
-    React.isValidElement(<SceneChanger/>).should.equal(true);
+    React.isValidElement(<SceneChanger />).should.equal(true);
   });
 });

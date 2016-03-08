@@ -1,6 +1,5 @@
 {
   "extends": [
-    "strict/es6/mocha",
     "strict",
     "strict-react",
     "strict/test"
