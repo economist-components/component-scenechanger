@@ -92,9 +92,6 @@
   "babel": {
     "compact": false,
     "ignore": "node_modules",
-    "optional": [
-      "runtime"
-    ],
     "sourceMaps": "inline",
     "stage": 2
   },
