@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/the-economist-editorial/component-scenechanger.git"
+    "url": "git+ssh://git@github.com/economist-components/component-scenechanger.git"
   },
   "scripts": {
     "access": "npm-run-all --parallel access:*",
